@@ -83,32 +83,6 @@ def main():
            except:
               continue
           
-     source = 'D:/RIT/Capstone/Capstone Data/Negative'
-     for root, dirs, filenames in os.walk(source):
-        for fn in filenames:
-           try:
-             fullpath = os.path.join(source, fn)
-             f = open(fullpath) 
-             l = [l for l in f.readlines() if l.splitlines()]
-             for review in l:
-                reviews.append(review)
-             f.close()
-           except:
-             continue  
-         
-     source = 'D:/RIT/Capstone/Capstone Data/hotels/ALL'
-     for root, dirs, filenames in os.walk(source):
-         for fn in filenames:
-          try:
-           fullpath = os.path.join(source, fn)
-           f = open(fullpath) 
-           l = [l for l in f.readlines() if l.splitlines()]
-           for review in l:
-             reviews.append(review)
-           f.close()
-          except:
-              continue 
-          
      finaldata = pd.DataFrame({
      'text':reviews,
      })
